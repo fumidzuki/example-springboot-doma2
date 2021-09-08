@@ -3,4 +3,6 @@ CREATE TABLE example_one.account_one (
   user_id int PRIMARY KEY,
   username varchar ( 128 ) UNIQUE NOT NULL
 );
-INSERT INTO example_one.account_one (user_id, username) SELECT i, format('username_%s', i) FROM generate_series(1,10) as i;
+INSERT INTO example_one.account_one values (1, 'username_one_01');
+INSERT INTO example_one.account_one values (2, 'username_one_02');
+INSERT INTO example_one.account_one values (3, 'username_one_03');

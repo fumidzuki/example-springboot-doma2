@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.fumidzuki.dao;
 
 import java.util.List;
 
@@ -11,16 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.example.entity.AccountTwo;
+import com.fumidzuki.entity.AccountOne;
 
 @Dao
 @AnnotateWith(annotations = {@Annotation(target = AnnotationTarget.CLASS, type = Repository.class),
     @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = Autowired.class),
     @Annotation(target = AnnotationTarget.CONSTRUCTOR_PARAMETER, type = Qualifier.class,
-        elements = "\"databaseTwoConfig\"")})
-public interface DatabaseTwoDao {
+        elements = "\"databaseOneConfig\"")})
+public interface DatabaseOneDao {
 
   @Select
-  public List<AccountTwo> selectAll();
+  public List<AccountOne> selectAll();
 
 }

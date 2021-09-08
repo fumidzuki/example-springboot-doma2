@@ -1,30 +1,26 @@
-package com.example.dao;
+package com.fumidzuki.dao;
 
 import java.util.List;
+
+import com.fumidzuki.entity.AccountTwo;
 
 import org.seasar.doma.AnnotateWith;
 import org.seasar.doma.Annotation;
 import org.seasar.doma.AnnotationTarget;
 import org.seasar.doma.Dao;
-import org.seasar.doma.Insert;
 import org.seasar.doma.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.example.entity.AccountOne;
-
 @Dao
 @AnnotateWith(annotations = {@Annotation(target = AnnotationTarget.CLASS, type = Repository.class),
     @Annotation(target = AnnotationTarget.CONSTRUCTOR, type = Autowired.class),
     @Annotation(target = AnnotationTarget.CONSTRUCTOR_PARAMETER, type = Qualifier.class,
-        elements = "\"databaseOneConfig\"")})
-public interface DatabaseOneDao {
+        elements = "\"databaseTwoConfig\"")})
+public interface DatabaseTwoDao {
 
   @Select
-  public List<AccountOne> selectAll();
-
-  @Insert
-  public int insert(AccountOne e);
+  public List<AccountTwo> selectAll();
 
 }
